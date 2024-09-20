@@ -1,0 +1,23 @@
+version: '3'
+services:
+  moddle:
+    container_name: moodle_develop
+    privileged: true
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - '4000:80'
+    networks:
+      web_net:
+        aliases:
+          - web_net
+    volumes:
+      - logs:/var/log/apache2/
+      - ./:/var/www/html
+      - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+volumes:
+  logs:
+networks:
+  web_net:
+    name: moodle_net
