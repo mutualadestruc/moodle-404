@@ -13,7 +13,7 @@ services:
           - web_net
     volumes:
       - logs:/var/log/apache2/
-      - ./moodle:/var/www/html
+      - ./:/var/www/html
       - ./moodledata:/var/www/moodledata
       - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
     restart: always
