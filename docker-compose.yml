@@ -1,6 +1,5 @@
-version: '3'
 services:
-  moddle:
+  moodle:
     container_name: moodle_develop
     privileged: true
     build:
@@ -14,10 +13,13 @@ services:
           - web_net
     volumes:
       - logs:/var/log/apache2/
-      - ./:/var/www/html
+      - ./moodle:/var/www/html
+      - ./moodledata:/var/www/moodledata
       - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+    restart: always
 volumes:
   logs:
 networks:
   web_net:
     name: moodle_net
+    external: true # Parece que tu contenedor moodle_develop ha arrancado correctamente, aunque te muestra una advertencia sobre la red moodle_net, ya que esta red ya existe pero no fue creada como parte de este proyecto.
