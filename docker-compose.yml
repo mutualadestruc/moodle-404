@@ -5,8 +5,8 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
-    ports:
-      - '4000:80'
+    #ports:
+      #- '4000:80'
     networks:
       web_net:
         aliases:
@@ -17,6 +17,23 @@ services:
       - ./moodledata:/var/www/moodledata
       - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
     restart: always
+
+  nginx-proxy-manager:
+    image: jc21/nginx-proxy-manager:latest
+    container_name: nginx_proxy_manager
+    restart: always
+    ports:
+      - "8080:80"    # HTTP
+      - "81:81"    # Panel de administración
+      - "443:443"  # HTTPS
+    environment:
+      DB_SQLITE_FILE: "/data/database.sqlite"
+    volumes:
+      - ./nginx_data:/data
+      - ./nginx_letsencrypt:/etc/letsencrypt
+    networks:
+      - web_net
+
 volumes:
   logs:
 networks:
