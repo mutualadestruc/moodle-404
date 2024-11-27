@@ -5,12 +5,12 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
-    # ports:
-    #   - '4000:80'
+    ports:
+      - '4000:80'
     networks:
       web_net:
         aliases:
-          - web_net
+          - moodle
     volumes:
       - logs:/var/log/apache2/
       - ./:/var/www/html
@@ -38,5 +38,5 @@ volumes:
   logs:
 networks:
   web_net:
-    name: moodle_net
-    external: true # Parece que tu contenedor moodle_develop ha arrancado correctamente, aunque te muestra una advertencia sobre la red moodle_net, ya que esta red ya existe pero no fue creada como parte de este proyecto.
+    driver: bridge
+    
