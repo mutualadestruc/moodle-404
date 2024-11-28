@@ -16,7 +16,5 @@ services:
 
 volumes:
   logs:
-networks:
-  web_net:
 
     
