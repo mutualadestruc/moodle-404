@@ -1,7 +1,7 @@
 FROM php:8.1-apache
 RUN apt-get update && \
   apt-get install -y --no-install-recommends git libssl-dev zlib1g-dev libxml2-dev libzip-dev libpng-dev \ 
-  libonig-dev libcurl4-openssl-dev libjpeg-dev libfreetype6-dev \ install -y nano \
+  libonig-dev libcurl4-openssl-dev libjpeg-dev libfreetype6-dev \
   && rm -rf /var/lib/apt/lists/*
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg && \
     docker-php-ext-install mysqli zip gd intl soap opcache exif mbstring curl
