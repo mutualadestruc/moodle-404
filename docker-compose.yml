@@ -16,3 +16,6 @@ services:
 
 volumes:
   logs:
+
+networks:
+  moodle_network:
