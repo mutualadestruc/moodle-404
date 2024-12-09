@@ -19,3 +19,4 @@ volumes:
 
 networks:
   moodle_network:
+    external: true
