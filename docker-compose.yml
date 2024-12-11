@@ -6,8 +6,8 @@ services:
       context: .
       dockerfile: ./Dockerfile
     ports:
-      - '8080:8080'
-      - '7443:8443'
+      - '7443:80'
+      #- '7443:8443'
     volumes:
       - logs:/var/log/apache2/
       - ./:/var/www/html
