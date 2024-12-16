@@ -6,8 +6,7 @@ services:
       context: .
       dockerfile: ./Dockerfile
     ports:
-      - '7443:80'
-      #- '7443:8443'
+      - '80:80'
     volumes:
       - logs:/var/log/apache2/
       - ./:/var/www/html
@@ -19,5 +18,6 @@ volumes:
   logs:
 
 networks:
-  moodle_network:
+  default:
     external: true
+    name: network_interna_moodle

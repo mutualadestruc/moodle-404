@@ -1,0 +1,2 @@
+ * * * * /usr/bin/php /moodle-404/admin/cli/cron.php
+* * * * /usr/bin/php  /var/www/html/admin/cli/cron.php
