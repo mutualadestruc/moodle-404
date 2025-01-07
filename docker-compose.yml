@@ -13,6 +13,18 @@ services:
       - ./moodledata:/var/www/moodledata
       - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
     restart: always
+  cron:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: moodle-cron
+    command: ["php", "/var/www/html/admin/cli/cron.php"]
+    volumes:
+      - ./:/var/www/html
+      - ./moodledata:/var/www/moodledata
+    depends_on:
+      - moodle
+    restart: always
 
 volumes:
   logs:
