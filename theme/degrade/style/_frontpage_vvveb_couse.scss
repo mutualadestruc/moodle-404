@@ -12,6 +12,7 @@
         padding: 15px;
         border: 2px solid #ffffff38;
         margin: 0 27px;
+        width: 100%;
         legend {
             float: none;
             width: auto;
@@ -53,6 +54,13 @@
                     font-weight: 700;
                     margin-bottom: 30px;
                 }
+            }
+            p {
+                display: -webkit-box;
+                -webkit-line-clamp: 4;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
             .price {
                 .current-price {

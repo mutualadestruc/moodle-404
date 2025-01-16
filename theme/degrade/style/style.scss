@@ -686,7 +686,7 @@ body:not(.pagelayout-frontpage) #region-main {
 .btn.btn-outline-secondary.dropdown-toggle:focus,
 .btn.btn-outline-secondary.dropdown-toggle:focus:active,
 .btn.btn-outline-secondary.dropdown-toggle:active {
-    color: #fff;
+    color: #666;
     filter: none;
 }
 .dropdown-menu > .active > a,
@@ -1263,8 +1263,14 @@ tr.discussion .btn i.icon {
     }
     &.editing_delete {
         background: #e91e63;
+        &:hover {
+            background: #f84a5b;
+        }
         &, * {
             color: #fff;
+        }
+        * {
+            background: transparent;
         }
     }
 }
@@ -1560,7 +1566,7 @@ button.close:focus,
 }
 .nav-tabs:not(.more-nav) .nav-link:hover,
 .nav-pills .nav-link:hover {
-    color: #fff;
+    color: #fff !important;
     background: rgb(var(--color_primary));
 }
 .nav-tabs:not(.more-nav) .nav-link.active:not(:disabled):not(.disabled):active,
@@ -1569,7 +1575,7 @@ button.close:focus,
 .nav-pills .nav-link.active:not(:disabled):not(.disabled):active,
 .nav-pills .nav-link.active:not(:disabled):not(.disabled).active,
 .show > .nav-pills .nav-link.active.dropdown-toggle {
-    color: #fff;
+    color: #fff !important;
     background: rgb(var(--color_primary));
 }
 .nav-tabs:not(.more-nav) .nav-link.active:not(:disabled):not(.disabled):active:focus,
@@ -4200,7 +4206,7 @@ a#prev-activity-link,
 a#next-activity-link {
     color: #fff;
     border: none;
-    white-space: nowrap !important;
+    //white-space: nowrap !important;
     &:hover {
         text-decoration: none;
         color: #eee;
@@ -4213,8 +4219,6 @@ a#prev-activity-link {
 a#next-activity-link {
     background-color: rgb(var(--color_primary));
 }
-@import "degrade";
-
 #page-contentbank {
     .cb-toolbar-container {
         .dropdown-scrollable {
@@ -4250,11 +4254,11 @@ a#next-activity-link {
         margin: 1.75rem auto;
     }
 }
-@import "dark-mode";
-@import "jquery-ui";
-
 .notloggedin {
     .hide-nologin {
         display: none;
     }
 }
+@import "dark-mode";
+@import "jquery-ui";
+@import "degrade";

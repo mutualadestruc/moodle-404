@@ -95,7 +95,7 @@ if (isset($_POST['startTemplateUrl']) && !empty($_POST['startTemplateUrl'])) {
         }
     }
 }
-$html = preg_replace('/<link vvveb-remove="true".*>/', '', $html);
+$html = preg_replace('/<.*?vvveb-remove.*?>/si', '', $html);
 
 if (isset($_POST['file'])) {
     $file = sanitizeFileName($_POST['file']);
@@ -104,6 +104,10 @@ if (isset($_POST['file'])) {
 if (isset($_GET['action'])) {
     $action = htmlspecialchars(strip_tags($_GET['action']));
 }
+
+\cache::make("theme_degrade", "layout_cache")->purge();
+\cache::make("theme_degrade", "css_cache")->purge();
+\cache::make("theme_degrade", "logo_cache")->purge();
 
 if ($action) {
     //file manager actions, delete and rename

@@ -15,23 +15,26 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * version.php
+ * Cache file.
  *
- * This is built using the boost template to allow for new theme's using
- * Moodle's new Boost theme engine
- *
- * @package     theme_degrade
- * @copyright   2024 Eduardo kraus (http://eduardokraus.com)
- * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package    theme_degrade
+ * @copyright  2024 Eduardo Kraus {@link http://eduardokraus.com}
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->version = 2025011300;
-$plugin->release = '8.1.1';
-$plugin->maturity = MATURITY_STABLE;
-$plugin->requires = 2022041900;
-$plugin->component = 'theme_degrade';
-$plugin->dependencies = [
-    'theme_boost' => 2022041900,
+$definitions = [
+    "css_cache" => [
+        "mode" => cache_store::MODE_APPLICATION,
+        "ttl" => 1 * 24 * 60 * 60, // 1d.
+    ],
+    "logo_cache" => [
+        "mode" => cache_store::MODE_APPLICATION,
+        "ttl" => 1 * 24 * 60 * 60, // 1d.
+    ],
+    "layout_cache" => [
+        "mode" => cache_store::MODE_APPLICATION,
+        "ttl" => 1 * 24 * 60 * 60, // 1d.
+    ],
 ];
