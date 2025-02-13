@@ -9757,7 +9757,7 @@ class admin_setting_enablemobileservice extends admin_setting_configcheckbox {
         require_once($CFG->dirroot . '/webservice/lib.php');
         $webservicemanager = new webservice();
         $mobileservice = $webservicemanager->get_external_service_by_shortname(MOODLE_OFFICIAL_MOBILE_SERVICE);
-        if ($mobileservice->enabled and $this->is_protocol_cap_allowed()) {
+        if ($mobileservice && $mobileservice->enabled && $this->is_protocol_cap_allowed()) {
             return $result;
         } else {
             return 0;
