@@ -23,6 +23,7 @@
  */
 
 $string['canntenrol'] = 'Enrolment is disabled or inactive';
+$string['messageprovider:enrolcoursewelcomemessage'] = 'Welcome message for new course enrolments';
 $string['canntenrolearly'] = 'You cannot enrol yet; enrolment starts on {$a}.';
 $string['canntenrollate'] = 'You cannot enrol any more, since enrolment ended on {$a}.';
 $string['cohortnonmemberinfo'] = 'Only members of cohort \'{$a}\' can self-enrol.';
