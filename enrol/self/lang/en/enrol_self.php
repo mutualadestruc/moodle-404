@@ -23,7 +23,6 @@
  */
 
 $string['canntenrol'] = 'Enrolment is disabled or inactive';
-$string['messageprovider:enrolcoursewelcomemessage'] = 'Welcome message for new course enrolments';
 $string['canntenrolearly'] = 'You cannot enrol yet; enrolment starts on {$a}.';
 $string['canntenrollate'] = 'You cannot enrol any more, since enrolment ended on {$a}.';
 $string['cohortnonmemberinfo'] = 'Only members of cohort \'{$a}\' can self-enrol.';
@@ -77,6 +76,7 @@ $string['maxenrolled'] = 'Max enrolled users';
 $string['maxenrolled_help'] = 'Specifies the maximum number of users that can self enrol. 0 means no limit.';
 $string['maxenrolledreached'] = 'Maximum number of users allowed to self-enrol was already reached.';
 $string['messageprovider:expiry_notification'] = 'Self enrolment expiry notifications';
+$string['messageprovider:enrolcoursewelcomemessage'] = 'Welcome message for new course enrolments';
 $string['newenrols'] = 'Allow new self enrolments';
 $string['newenrols_desc'] = 'Allow users to self enrol into new courses by default.';
 $string['newenrols_help'] = 'This setting determines whether a user can enrol into this course.';
