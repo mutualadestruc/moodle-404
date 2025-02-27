@@ -3718,7 +3718,7 @@ abstract class enrol_plugin {
 
         $message = new \core\message\message();
         $message->courseid = $instance->courseid;
-        $message->component = 'moodle';
+        $message->component = 'enrol_self';
         $message->name = 'enrolcoursewelcomemessage';
         $message->userfrom = $contact;
         $message->userto = $user;
